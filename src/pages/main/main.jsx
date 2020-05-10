@@ -11,8 +11,9 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
+import data from './../../data/data';
 import useStyles from './main.style';
 
 function Main() {
@@ -43,34 +44,40 @@ function Main() {
       </AppBar>
 
       {/* body */}
-        <Grid item xs={6} sm={3}>
-          <Card>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                alt="Contemplative Reptile"
-                height="140"
-                image="/static/images/cards/contemplative-reptile.jpg"
-                title="Contemplative Reptile"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Lizard
+      {
+        data.map(product => {
+          return (
+            <Grid item xs={6} sm={3} key={product.id}>
+              <Card>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    alt="Contemplative Reptile"
+                    height="200"
+                    image={product.img}
+                    title="Braids"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {product.name}
               </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                  across all continents except Antarctica
+                    <Typography variant="body2" color="textSecondary" component="p">
+                      Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                      across all continents except Antarctica
               </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions className={classes.bookSection}>
-              <p>XAF 2000</p>
-              <Button size="small">
-                <Link className={classes.bookBtn} to="/book">Book</Link>
-            </Button>
-            </CardActions>
-          </Card>
-        </Grid>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions className={classes.bookSection}>
+                  <p>{product.price}</p>
+                  <Button size="small">
+                    <Link className={classes.bookBtn} to="/book">Book</Link>
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          )
+        })
+      }
     </Grid>
   );
 }

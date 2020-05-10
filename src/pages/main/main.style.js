@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     },
     navbar: {
       backgroundColor: '#3fb55e',
-      marginBottom: 30,
+      marginBottom: 10,
     },
     subroot: {
       width:'100%',
