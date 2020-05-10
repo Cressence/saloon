@@ -1,19 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
-const someComponent = () => {
-  return (
-    <div>
-      <p>Test component</p>
-    </div>
-  )
-}
+import Main from './pages/main/main';
 
 function App() {
   return (
     <div>
       <Router>
-        <Route exact path="/" component={someComponent} />
+        <Route exact path="/" component={Main} />
       </Router>
     </div>
   );
