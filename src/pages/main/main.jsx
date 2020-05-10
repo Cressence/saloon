@@ -11,6 +11,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
+import {Link} from 'react-router-dom';
 
 import useStyles from './main.style';
 
@@ -62,10 +63,10 @@ function Main() {
               </Typography>
               </CardContent>
             </CardActionArea>
-            <CardActions>
+            <CardActions className={classes.bookSection}>
               <p>XAF 2000</p>
-              <Button size="small" color="primary">
-                Book
+              <Button size="small">
+                <Link className={classes.bookBtn} to="/book">Book</Link>
             </Button>
             </CardActions>
           </Card>

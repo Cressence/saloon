@@ -62,6 +62,15 @@ const useStyles = makeStyles((theme) => ({
     subroot: {
       width:'100%',
     },
+    bookSection: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
+    bookBtn: {
+      color: '#3fb55e',
+      textDecoration: 'none',
+    },
   }));
 
   export default useStyles;
